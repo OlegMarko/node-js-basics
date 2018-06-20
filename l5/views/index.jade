@@ -3,3 +3,17 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  ul
+    li Text 1
+    li Text 2
+    li Text 3
+    li Text 4
+    li Text 5
+
+  input(type='text').class-name#anyid
+
+  if (typeof condition !== 'undefined' && condition)
+    p It's true
+  else
+    p It's false
