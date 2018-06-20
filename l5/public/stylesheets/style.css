@@ -6,3 +6,24 @@ body {
 a {
   color: #00B7FF;
 }
+
+div {
+  margin: 5px auto;
+  padding: 5px 15px;
+}
+
+button {
+  color: #fff;
+  background-color: #0c0;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.success {
+  background-color: #0c0;
+}
+
+.errors {
+  background-color: #c00;
+}

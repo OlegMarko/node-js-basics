@@ -4,14 +4,33 @@ block content
   h1= title
   p Welcome to #{title}
 
-  ul
-    li Text 1
-    li Text 2
-    li Text 3
-    li Text 4
-    li Text 5
+  if (success)
+      section.success
+        h2 Successful Validation
+  else if (errors)
+      section.errors
+        ul
+          each error in errors
+            li= error.msg
 
-  input(type='text').class-name#anyid
+  form(action="/submit", method="post")
+    div.input
+      label(for="email") Email
+      br
+      input(type='email', name='email').class-email#email
+
+    div.input
+      label(for="password") Password
+      br
+      input(type='password', name='password').class-pass#password
+
+    div.input
+      label(for="confirmPassword") Confirm Password
+      br
+      input(type='password', name='confirmPassword').class-pass#confirmPassword
+
+    div.input
+      button Submit
 
   if (typeof condition !== 'undefined' && condition)
     p It's true
