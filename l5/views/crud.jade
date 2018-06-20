@@ -1,0 +1,62 @@
+extends layout
+
+block content
+    h1 MONGODB - EXERCISE
+
+    section.insert
+        h3 Insert Data
+        form(action="/crud/insert", method="post")
+            div.input
+                label(for="title") Title
+                input(type="text", name="title")#title
+
+            div.input
+                label(for="content") Content
+                input(type="text", name="content")#content
+
+            div.input
+                label(for="author") Author
+                input(type="text", name="author")#author
+
+            button(type="submit") INSERT
+
+    section.get
+        h3 Get Data
+        a(href="/crud/get-data") LOAD DATA
+        div
+            each item in items
+                article.item
+                    div Title: #{item.title}
+                    div Content: #{item.content}
+                    div Author: #{item.author}
+                    div ID: #{item._id}
+
+    section.update
+        h3 Update Data
+        form(action="/crud/update", method="post")
+            div.input
+                label(for="id") ID
+                input(type="text", name="id")#id
+
+            div.input
+                label(for="title_u") Title
+                input(type="text", name="title")#title_u
+
+            div.input
+                label(for="content_u") Content
+                input(type="text", name="content")#content_u
+
+            div.input
+                label(for="author_u") Author
+                input(type="text", name="author")#author_u
+
+            button(type="submit") UPDATE
+
+    section.delete
+        h3 Delete Data
+        form(action="/crud/delete", method="post")
+            div.input
+                label(for="id_d") ID
+                input(type="text", name="id")#id_d
+
+            button(type="submit") DELETE

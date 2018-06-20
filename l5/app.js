@@ -7,6 +7,7 @@ var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 
 var indexRouter = require('./routes/index');
+var crudRouter = require('./routes/crud');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(expressSession({
 }));
 
 app.use('/', indexRouter);
+app.use('/crud', crudRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
